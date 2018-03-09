@@ -1,0 +1,14 @@
+body {
+    background-color: #eeeeee;
+    direction: rtl;
+    padding: 20px;
+}
+
+h1 {
+    color: orange;
+    font-family: 'Cairo', sans-serif;
+}
+
+#lnk {
+    font-family: 'Amiri', serif;   
+}
