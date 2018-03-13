@@ -1,0 +1,26 @@
+<html>
+        <head>
+            <script>
+                function writeln(text) {
+                    document.write(text);
+                    document.write("<br></br>");
+                }
+    
+                function isPrime(number) {
+                    if(number == 2 || number == 3 || number == 5 || number == 7 || number == 11 || number == 13 || number == 17 || number == 19) {
+                        writeln("is prime");
+                    }
+                    else {
+                        writeln("not prime");
+                    }
+                }
+    
+                var input = prompt("write a number");
+                isPrime(input);
+    
+            </script>
+        </head>
+        <body>
+            
+        </body>
+    </html>
