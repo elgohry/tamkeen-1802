@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+            function write(text) {
+                document.write(text);
+                document.write("<br></br>");
+            }
+            var word = prompt("please enter a word");
+            var look = prompt("find");
+
+            write(word);
+            write(look);
+
+            var i = 0;
+            var n = word.length;
+            var counter = 0;
+            while(i < n) {
+                if(word[i] == look) {
+                    counter = counter + 1;
+                }
+                else {
+                }
+                i = i + 1;
+            }
+            write(counter);
+
+            if(counter > 1) {
+                write("not prime")
+            }
+            else {
+                write("is prime")
+            }
+
+            i = 0;
+            n = word.length;
+            while(i < n) {
+                if(word[i] == look) {
+                    document.write("<b>" + word[i] + "</b>");
+                }
+                else {
+                    document.write(word[i]);
+                }
+                i = i + 1;
+            }
+
+        </script>
+        <style>
+            b {
+                color: red;
+            }
+        </style>
+    </head>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+            function write(text) {
+                document.write(text);
+                document.write("<br></br>");
+            }
+
+            var word = prompt("please enter a word to reverse");
+
+            var n = word.length;
+
+            write(n);
+            while(n > 0) {
+                document.write(word[n-1]);
+                n = n - 1;
+            }
+
+            n = word.length;
+            var reversedword = "";
+            while(n > 0) {
+                reversedword = reversedword + word[n-1];
+                n = n - 1;
+            }
+
+            write("########");
+            write(reversedword);
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

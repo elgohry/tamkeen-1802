@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <script>
+            function bo2loz(modkhal) {
+                document.write(modkhal);
+                document.write("<br></br>");
+            }
+
+            bo2loz("hello");
+            bo2loz("tany");
+            bo2loz("talt");
+
+            function add3(x,y,z) {
+                var sum = x+y+z;
+                document.write(sum);
+                document.write("<br></br>");    
+            }
+
+            add3(13,15,320);
+            add3(1,2,3);
+
+            document.write("hello");
+            document.write("<br></br>");
+            document.write("hello 2");
+            document.write("<br></br>");
+            document.write("hello 3");
+            document.write("<br></br>");
+            document.write("hello 4");
+            document.write("<br></br>");
+
+            var x = 2;
+            var s = "hello";
+
+            document.write(x);
+            document.write("<br></br>");
+            document.write(s);
+            document.write("<br></br>");
+
+            var y = x + 2;
+
+            document.write(y);
+            document.write("<br></br>");
+
+            var y2 = s + " " + "again";
+            document.write(y2);
+            document.write("<br></br>");
+
+            bo2loz(y2.length);
+
+            var test = 2 > 3;
+            bo2loz(test);
+
+
+            var test2 = 2 < 3;
+            bo2loz(test2);
+
+            if(test2) {
+                bo2loz("is larger");
+            }
+            else {
+                bo2loz("is smaller");
+            }
+
+            var z = 1232142;
+
+            if(z > 10 && z < 30) {
+                bo2loz("is between");
+            }
+            else {
+                bo2loz("not between");
+            }
+
+            if (z % 2 == 0) {
+                bo2loz("is even");
+            }
+            else {
+                bo2loz("is odd");
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
