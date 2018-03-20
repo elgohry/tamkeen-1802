@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Cairo|Roboto" rel="stylesheet">      
+        <style>
+            body {
+            direction: rtl;
+            padding: 30px;
+            font-size: 20px;
+            font-family: 'Cairo', sans-serif, 'Roboto', sans-serif;
+            }
+            pre {
+                direction: ltr;
+                text-align: left;
+            }
+            li {
+            margin-bottom: 10px;
+            }
+
+            ol {
+            list-style-type: arabic-indic;
+            }
+
+            .center {
+            text-align: center;
+            }
+
+            hr {
+            border: 1px dashed rgba(0, 0, 0, 0.2);
+            }
+
+            p {
+            margin: 0;
+            }
+        </style>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <h1>(Arrays) المجموعات</h1>
+        <p>المجموعة ممكن نشأها كالتالي:</p>
+        <pre>var a = [];
+document.write(a);
+document.write("&lt;br&gt;&lt;/br&gt;");
+a.push(1);
+document.write(a);
+document.write("&lt;br&gt;&lt;/br&gt;");
+a.push(2);
+document.write(a);
+document.write("&lt;br&gt;&lt;/br&gt;");
+a.push(3);
+document.write(a);
+document.write("&lt;br&gt;&lt;/br&gt;");
+a.push(4);
+document.write(a);
+document.write("&lt;br&gt;&lt;/br&gt;");
+</pre>
+<p>وممكن البداية تكون:</p>
+<pre>var b = [1,2,3,4];</pre>
+<p>كما الكلام, ممكن نوصل لحجم المجموعة أو عنصر معين:</p>
+<pre>var c = [10,50,40,60];
+document.write(c[0]);
+document.write("&lt;br&gt;&lt;/br&gt;");
+document.write(c[2]);
+document.write("&lt;br&gt;&lt;/br&gt;");
+document.write(c.length);
+document.write("&lt;br&gt;&lt;/br&gt;");
+</pre>
+<p>ومش لازم تكون أرقام بس</p>
+<pre>
+var d = [1, 2, "saher", "علي"];
+</pre>
+<h2>التمارين</h2>
+        <ol>
+            <li>
+                    المستخدم بيدخل ١٠ أرقام. أيه أكبر وأصغر رقم؟
+            </li>
+            <li>
+                هل اسم المستخدم حيدخله واحد من: 
+                <ul>
+                    <li>أحمد</li>
+                    <li>محمد</li>
+                    <li>منى</li>
+                    <li>ساهر</li>
+                </ul>
+            </li>
+            <li>
+                باستخدام promt مرة واحدة فقط, دخل مجموعة أرقام بينهم مسافه. أيه أكبر وأصغر رقم؟
+                <br>
+                دليل:
+                <pre>var a = "1 45 3 4".split(" ");
+document.write(a);
+                </pre>
+            </li>
+            <li>
+                المستخدم حيدخل مجموعة أرقام ورقم عايز يشيله.
+                إطبع الأرقام تاني من عير الرقم ده.
+            </li>
+            <li>
+               رتب مجموعة أرقام يدخلها المستخدم.
+               <br>
+               دليل: استخدم حلول التمارين السابقة.
+            </li>
+
+            <li>
+               أطبع جدول الضرب من ١ إلى س.
+               س رقم يدخله المستخدم
+            </li>
+        </ol>
+    </body>
+</html>
