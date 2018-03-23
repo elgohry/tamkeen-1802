@@ -1,0 +1,31 @@
+<html>
+        <head>
+            <script src="jquery-3.3.1.js"></script>
+        </head>
+
+        <body>
+        <input id="username"></input>
+        <input type="password" id="password"></input>
+        <input type="number" id="num"></input>
+        <input type="date" id="birthday"></input>
+
+        <button id="mybutton">show data</button>
+
+        <div id="result"></div>
+        </body>
+
+        <script>
+            var s1 = $("#username").val();
+            function readInput() {
+                var s1 = $("#username").val();
+                var s2 = $("#birthday").val();
+                var s3 = $("#password").val();
+
+                $("#result").append(s1);
+                $("#result").append(s2);
+                $("#result").append(s3);
+            }
+
+            $("#mybutton").click(readInput);
+        </script>
+</html>
