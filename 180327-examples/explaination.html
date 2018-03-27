@@ -1,0 +1,247 @@
+<html>
+        <head>
+            <link href="https://fonts.googleapis.com/css?family=Cairo|Roboto" rel="stylesheet">      
+            <style>
+                body {
+                direction: rtl;
+                padding: 30px;
+                font-size: 20px;
+                font-family: 'Cairo', sans-serif, 'Roboto', sans-serif;
+                }
+                pre {
+                    direction: ltr;
+                    text-align: left;
+                    background-color: #dcdcdc;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+                li {
+                margin-bottom: 10px;
+                }
+    
+                ol {
+                list-style-type: arabic-indic;
+                }
+    
+                .center {
+                text-align: center;
+                }
+    
+                hr {
+                border: 1px dashed rgba(0, 0, 0, 0.2);
+                }
+    
+                p {
+                margin: 0;
+                }
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+                table, th, td {
+                    border: 1px solid black;
+                }
+                th {
+                    background-color: black;
+                    color: white;
+                    font-size: 18px;
+                    font-weight: bolder;
+                }
+                th, td {
+                    padding: 1em;
+                }
+
+                @media print {
+                h2 {page-break-before: always;}
+            }
+    
+            </style>
+        </head>
+        <body>
+            <h1>مكتبة JQuery</h1>
+            <p>مجموعة من الأوامر تسهل التعامل مع محتوي الصفحة.</p>
+            <p>يتم تحميل المكتبة بوضع الأكواد  &lt;script src="jquery-3.3.1.js"&gt;&lt;/script&gt; داخل ال &lt;head&gt;...&lt;/head&gt;</p>
+             فيبان الملف كالتالي:
+<pre>&lt;html&gt;
+    &lt;head&gt;
+        &lt;script src="jquery-3.3.1.js"&gt;&lt;/script&gt;
+        &lt;style&gt;
+            //CSS أكواد
+        &lt;/stlye&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        محتوى الصفحة
+    &lt;/body&gt;
+    &lt;script&gt;
+        //JavaScriptاكتب هنا بقيت أكواد ال
+    &lt;/script&gt;
+&lt;/html&gt;
+</pre>
+    <h2>أوامر JQuery</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>الأمر</th>
+                <th>الوصف</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><pre>$("....")</pre></td>
+                <td>
+                    <p>اختيار العنصر. مثلا:</p>
+                    <pre>var s = $("p");</pre> يختار كل الفقرات في الصفحة.
+                    <pre>var t = $("#container");</pre> يختار عنصر له"id="container
+                </td>
+            </tr>
+            <tr>
+                    <td><pre>var x = $("....");
+x.addClass("testclass");</pre></td>
+                    <td>بيزود class علي العناصر إللي اختارتها</td>
+            </tr>
+            <tr>
+                    <td><pre>var x = $("....");
+x.removeClass("testclass");</pre></td>
+                    <td>بيشيل class من العناصر إللي اختارتها</td>
+            </tr>
+            <tr>
+                    <td><pre>var x = $("....");
+x.append("...");</pre></td>
+                    <td>بيزود محتوى في العناصر إللي اختارتها </td>
+            </tr>
+            <tr>
+                    <td><pre>var x = $("....");
+x.html("...");</pre></td>
+                    <td>تغيير محتوى في العناصر إللي اختارتها </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <pre>var x = $("..."); 
+var value = x.val();</pre>
+                </td>
+                <td>بيجيب قيمة العنصر لو بياخد مدخل من المستخدم زي عنصر &lt;input&gt;</td>
+            </tr>
+
+            <tr>
+                <td><pre>var x = $("....");
+function handleClick() {
+    //.....
+}
+x.click(handleClick)</pre></td>
+                <td>بينفذ الأمر handleClick لما أدوس علي العنصر إللي اختارته
+                <p>
+                        استخدم
+                        <pre>$(this)</pre> داخل الأمر للوصؤل للعنصر اللي اداس عليه
+                        </p>
+                    </td>
+            </tr>
+
+            <tr>
+                <td><pre>var x = $("....");
+function handleChange() {
+    //.....
+}
+x.change(handleChange)</pre></td>
+                <td>بينفذ الأمر 
+                        handleChange
+                    لما عنصر استمارة يتغير
+                    <p>
+                    استخدم
+                    <pre>$(this)</pre> داخل الأمر للوصؤل للعنصر اللي اتغير
+                    </p>
+                </td>
+            </tr>
+      
+            <tr>
+                    <td><pre>var x = $("....");
+function handleMove(event) {
+    //event.pageX و event.pageY
+}
+x.mousemove(handleMove)</pre></td>
+                    <td>بينفذ الأمر 
+                        handleMove
+                        لما الفارة تتحرك.
+
+                        <br>
+
+                        <pre>event.pageX</pre>
+
+                        و 
+
+                        <pre>event.pageY</pre>
+
+                        بيجيبلك المكان في الصفحة
+                    </td>
+                </tr>      
+
+        </tbody>
+
+    </table>
+
+    <h2>عناصر الإستمارات</h2>
+
+    <table>
+            <thead>
+                <tr>
+                    <th>العنصر</th>
+                    <th>الوصف</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <pre>&lt;input type="text"&gt;&lt;/input&gt;</pre>
+                    </td>
+                    <td><label>كلمة </label>
+                        
+                        <input type="text" value="مدخل كلام"></input>
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            <pre>&lt;input type="password"&gt;&lt;/input&gt;</pre>
+                        </td>
+                        <td><label>كلمة سر</label>
+                            <input type="password" value="مدخل"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>
+                                    <pre>&lt;select&gt;
+    &lt;option value="1"&gt;إختيار ١&lt;/option&gt;
+    &lt;option value="2"&gt;إختيار ٢&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+                            </td>
+                            <td>
+                                <label>اختيار</label>
+                                <select>
+                                    <option value="1">إختيار ١</option>
+                                    <option value="2">إختيار ٢</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <pre>&lt;select multiple=true&gt;
+    &lt;option value="1"&gt;إختيار ١&lt;/option&gt;
+    &lt;option value="2"&gt;إختيار ٢&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+                                </td>
+                                <td>
+                                    <label>اختيار كتير</label>
+                                    <select multiple=true>
+                                        <option value="1">إختيار ١</option>
+                                        <option value="2">إختيار ٢</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            
+            </tbody>
+    </table>
+
+        </body>
+    </html>
