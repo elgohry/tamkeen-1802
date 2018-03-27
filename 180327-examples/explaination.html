@@ -96,6 +96,16 @@
             </tr>
             <tr>
                     <td><pre>var x = $("....");
+x.parent();</pre></td>
+                    <td>اختيار إلي العنصر الأب</td>
+            </tr>
+            <tr>
+                    <td><pre>var x = $("....");
+x.find("...);</pre></td>
+                    <td>البحث عن عنصر داخل الأول</td>
+            </tr>
+            <tr>
+                    <td><pre>var x = $("....");
 x.addClass("testclass");</pre></td>
                     <td>بيزود class علي العناصر إللي اختارتها</td>
             </tr>
@@ -103,6 +113,12 @@ x.addClass("testclass");</pre></td>
                     <td><pre>var x = $("....");
 x.removeClass("testclass");</pre></td>
                     <td>بيشيل class من العناصر إللي اختارتها</td>
+            </tr>
+            <tr>
+                    <td><pre>var x = $("....");
+x.show();
+x.hide();</pre></td>
+                    <td>ظهر أو إخفاء العنصر</td>
             </tr>
             <tr>
                     <td><pre>var x = $("....");
@@ -207,6 +223,17 @@ x.mousemove(handleMove)</pre></td>
                             <input type="password" value="مدخل"></input>
                         </td>
                     </tr>
+
+                    <tr>
+                            <td>
+                                <pre>&lt;input type="date"&gt;&lt;/input&gt;</pre>
+                            </td>
+                            <td><label>تاريخ </label>
+                                
+                                <input type="date" value="مدخل تاريخ"></input>
+                            </td>
+                        </tr>
+
                     <tr>
                             <td>
                                     <pre>&lt;select&gt;

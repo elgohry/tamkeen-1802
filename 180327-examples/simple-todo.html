@@ -1,0 +1,34 @@
+
+<html>
+    <head>
+        <script src="jquery-3.3.1.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cairo|Roboto" rel="stylesheet">      
+        <style>
+                body {
+                padding: 30px;
+                direction: rtl;
+                font-size: 20px;
+                font-family: 'Cairo', sans-serif, 'Roboto', sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+    </body>
+        <h1>أعمال اليوم</h1>
+        <input id="new-task"></htminput>
+        <button id="add">+</button>
+        <ul id="list">
+            
+        </ul>
+    </body>
+    <script>
+        function handleAdd() {
+            var htmlToAdd = "<li>"+$("#new-task").val()+"</li>";
+            $("#list").append(htmlToAdd);
+            $("#add").val("");
+        }
+        $("#add").click(handleAdd);
+    </script>
+    
+</html>

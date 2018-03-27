@@ -1,0 +1,81 @@
+<html>
+        <head>
+            <script src="jquery-3.3.1.js"></script>
+            <style>
+                #moveWithMouse {
+                    position: absolute;
+                }
+                .red {
+                    color: red;
+                }
+
+                .invalid {
+                    color: red;
+                    border-color: red;
+                }
+            </style>
+
+        </head>
+    
+        <body>
+            <h1 id="moveWithMouse">كلام</h1>
+            <h1 id="toRemove">remove</h1>
+            <button id="mybutton">زرار</button>
+
+            
+
+            <input type="number" id="username"></input>
+            <button id="check">ابعت</button>
+
+            <ol id="list">
+
+            </ol>
+        </body>
+    
+        <script>
+            var toShow = false;
+
+            function handleClick() {
+
+                $("h1").addClass("red");
+                var list = $("#list");
+
+                list.append("<li>hello</li>");
+
+                if(toShow == false) {
+                    $("#toRemove").fadeOut();
+                    toShow = true;
+                } else {
+                    $("#toRemove").fadeIn();
+                    toShow = false;
+                }
+                
+            }
+
+            $("#mybutton").click(handleClick);
+
+            function checkInput() {
+                var inputText = $("#username").val();
+                var num = parseInt(inputText);
+
+                if(inputText > 10) {
+                    $("#username").removeClass("invalid");
+                }
+                else {
+                    $("#username").addClass("invalid");
+                }
+                
+            }
+
+            $("#check").click(checkInput);
+
+
+            function checkMouseMove(saher) {
+                $("#list").html("<li>"+saher.pageY+","+saher.pageX+"</li>");
+                $("#moveWithMouse").css({left: saher.pageX, top: saher.pageY});
+            }
+
+            $("body").mousemove(checkMouseMove);
+
+        </script>
+    </html>
