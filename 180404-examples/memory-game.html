@@ -7,7 +7,7 @@ type="text/css" />
 <style type="text/css">
         body {
             padding: 30px;
-            direction: rtl;
+            
             font-size: 20px;
             font-family: 'Cairo', sans-serif, 'Roboto', sans-serif;
         }
@@ -16,6 +16,13 @@ type="text/css" />
             justify-content: center;
         }
         .cell {
+            width: 100px;
+            height: 100px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+
+        .fixedCell {
             width: 100px;
             height: 100px;
             margin-left: 5px;
@@ -59,24 +66,28 @@ type="text/css" />
       <div class="back"></div>
 
       <div class="front s1"></div>
+      <input type="hidden" value="s1"></input>
     </div>
 
     <div class="cell">
       <div class=" back"></div>
 
       <div class="front s2"></div>
+      <input type="hidden" value="s2"></input>
     </div>
 
     <div class="cell">
       <div class="back"></div>
 
       <div class="front s7"></div>
+      <input type="hidden" value="s7"></input>
     </div>
 
     <div class="cell">
       <div class="back"></div>
 
       <div class="front s8"></div>
+      <input type="hidden" value="s8"></input>
     </div>
   </div>
 
@@ -85,24 +96,28 @@ type="text/css" />
       <div class=" back"></div>
 
       <div class="front s3"></div>
+      <input type="hidden" value="s3"></input>
     </div>
 
     <div class="cell">
       <div class=" back"></div>
 
       <div class=" front s4"></div>
+      <input type="hidden" value="s4"></input>
     </div>
 
     <div class="cell">
       <div class="back"></div>
 
       <div class="front s5"></div>
+      <input type="hidden" value="s5"></input>
     </div>
 
     <div class="cell">
       <div class="back"></div>
 
       <div class="front s6"></div>
+      <input type="hidden" value="s6"></input>
     </div>
   </div>
 
@@ -111,24 +126,28 @@ type="text/css" />
       <div class="back"></div>
 
       <div class="front s5"></div>
+      <input type="hidden" value="s5"></input>
     </div>
 
     <div class="cell">
       <div class=" back"></div>
 
       <div class=" front s6"></div>
+      <input type="hidden" value="s6"></input>
     </div>
 
     <div class="cell">
       <div class="back"></div>
 
       <div class="front s3"></div>
+      <input type="hidden" value="s3"></input>
     </div>
 
     <div class="cell">
       <div class="back"></div>
 
       <div class="front s4"></div>
+      <input type="hidden" value="s4"></input>
     </div>
   </div>
 
@@ -137,56 +156,82 @@ type="text/css" />
       <div class=" back"></div>
 
       <div class=" front s8"></div>
+      <input type="hidden" value="s8"></input>
     </div>
 
     <div class="cell">
       <div class=" back"></div>
 
       <div class=" front s7"></div>
+      <input type="hidden" value="s7"></input>
     </div>
 
     <div class="cell">
       <div class="back"></div>
 
       <div class="front s1"></div>
+      <input type="hidden" value="s1"></input>
     </div>
 
     <div class="cell">
       <div class="back"></div>
 
       <div class="front s2"></div>
+      <input type="hidden" value="s2"></input>
     </div>
   </div>
 </div>
-</div><script type="text/javascript">
+</div>
+
+<img class="celebrate" src="fire.gif"></img>
+
+<script type="text/javascript">
 
     $('.front').hide();
-
-    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-    var i = 0;
-    while(i < colors.length) {
-        $('.container').append("");
-        i = i + 1;
-    }
+    $(".celebrate").hide();
 
     var counter = 0;
 
     function reset() {
         counter = 0;
-        $('.front').hide();
-        $('.back').show();
+        $('.cell .front').hide();
+        $('.cell .back').show();
     }
+
+    var currentlySelected = "";
+    var found = 0;
 
     function toggleShow() {
         $(this).find('.back').hide();
         $(this).find('.front').show();
+
+        var clickedValue = $(this).find('input').val();
+
+        if(clickedValue == currentlySelected) {
+            $('body').find("."+clickedValue).parent().removeClass("cell");
+            $('body').find("."+clickedValue).parent().addClass("fixedCell");
+            currentlySelected = "";
+            found = found + 1;
+        }
+        else {
+            currentlySelected = clickedValue;
+        }
+
+
         if(counter == 0) {
         }
         else {
-            setTimeout(reset, 1000);
+            setTimeout(reset, 500);
             
         }
         counter = counter + 1;
+
+        if(found==8) {celebrate();}
+    }
+
+    function celebrate() {
+        $(".celebrate").show();
+        $(".container").hide();
     }
 
     $('.cell').click(toggleShow);
