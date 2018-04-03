@@ -24,11 +24,24 @@
     </body>
     <script>
         function handleAdd() {
-            var htmlToAdd = "<li>"+$("#new-task").val()+"</li>";
+            var htmlToAdd = "<li>"+$("#new-task").val()+"<button class=remove>done</button></li>";
             $("#list").append(htmlToAdd);
-            $("#add").val("");
+            $("#new-task").val("");
+
+            $('.remove').click(handleRemove);
         }
+
+        function handleRemove() {
+            //alert("removing");
+
+            var parent = $(this).parent();
+            
+            parent.hide();
+        }
+
         $("#add").click(handleAdd);
+
+        
     </script>
     
 </html>
