@@ -1,0 +1,70 @@
+<html>
+        <head>
+            <script src="jquery-3.3.1.js"></script>      <style>
+                .red {
+                    color: red;
+                }
+                .blue {
+                    color: blue;
+                }
+            </style>
+        </head>
+        <body>
+                <div id="output"></div>
+
+            <h1>Title</h1>
+
+            <input id="text" type="text"></input>
+            <input id="num" type="number"></input>
+            <input id="pass" type="password"></input>
+            <input id="date" type="date"></input>
+
+            <button id="read">take input</button>
+
+            
+
+            <ul id="list">
+                <li class="red">1</li>
+                <li class="blue">2</li>
+                <li class="red">3</li>
+                <li class="blue">4</li>
+                <li class="red">5</li>
+                <li class="blue">6</li>
+                <li class="red">7</li>
+                <li class="blue">8</li>
+                <li class="red">9</li>
+                <li class="blue">10</li>
+            </ul>
+
+            <button id="b1">show blue</button>
+            <button id="b2">hide blue</button>
+            
+        </body>
+        <script>
+
+            var title = $("h1");
+            title.hide();
+
+
+            function showBlue() {
+                $(".blue").fadeIn();
+            }
+
+            $("#b1").click(showBlue);
+
+            function hideBlue() {
+                $(".blue").fadeOut();
+            }
+
+            $("#b2").click(hideBlue);
+
+            function takeIn() {
+                var password = $("#pass").val();
+                $("#list").append("<li>"+password+"</li>");
+            }
+
+            $("#read").click(takeIn);
+
+
+        </script>
+    </html>
