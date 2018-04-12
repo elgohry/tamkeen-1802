@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>  
+        <script src="jquery-3.3.1.js" type="text/javascript">
+        </script>
+        <link href="https://fonts.googleapis.com/css?family=Cairo|Roboto" rel="stylesheet"
+        type="text/css" />      
+    </head>
+
+    <body>
+        <input id="task"></input>
+        <button id="add">+</button>
+        <ul id="list">
+
+        </ul>
+
+    </body>
+
+
+    
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAcrUD5uhlB7yuaDB3bNNBFc5zHruTXmA0",
+            authDomain: "tamkeen-database-starter.firebaseapp.com",
+            databaseURL: "https://tamkeen-database-starter.firebaseio.com",
+            projectId: "tamkeen-database-starter",
+            storageBucket: "tamkeen-database-starter.appspot.com",
+            messagingSenderId: "265951754171"
+        };
+        firebase.initializeApp(config);
+
+        var db = firebase.firestore();
+
+        function processTask(task) {
+            console.log(task.id, task.data());
+        }
+
+        function handleDataRead(tasks) {
+            console.log(tasks.size);
+            console.log(tasks.docs);
+
+            $("#list li").remove();
+
+            var i = 0;
+            while(i < tasks.size) {
+                var data = tasks.docs[i].data();
+                $("#list").append("<li>"+data.text+"</li>");
+
+                i  = i + 1;
+            }
+
+            tasks.forEach(processTask);
+        }
+
+        function addTodo() {
+            var text = $("#task").val();
+            db.collection("tasks").add({
+                done: false,
+                text: text
+            });
+            clearInput();
+        }
+
+        function clearInput() {
+            $("#task").val("");
+            $("#task").focus();
+        }
+
+        db.collection("tasks").get().then(handleDataRead);
+        db.collection("tasks").onSnapshot(handleDataRead);
+
+        $("#add").click(addTodo);
+    </script>
+</html>
