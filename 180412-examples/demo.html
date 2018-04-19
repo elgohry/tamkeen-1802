@@ -53,7 +53,9 @@
         function handleAdd() {
             var text = $("#task").val();
 
-            var object = {text: text, done: false};
+            var object = {text: text, 
+                done: false, 
+                time: new Date()};
 
             db.collection("tasks").add(object);
             $("#list").append("<li>"+text+"</li>");
@@ -65,7 +67,7 @@
 
         $("#add").click(handleAdd);
 
-        db.collection("tasks").onSnapshot(readTasks);
+        db.collection("tasks").orderBy("time", "desc").onSnapshot(readTasks);
 
     </script>
 </html>
