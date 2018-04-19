@@ -43,7 +43,8 @@
           var providerData = user.providerData;
 
           $('#sign-in-status').append('Signed in');
-          $('#sign-in').append('<a href="logout.html">Signout</a>');
+          $('#sign-in').append('<button id="logout">Signout</button>');
+          $("#logout").click(handleLogout);
           $('#account-details').append("<li>"+email+"</li>");
           $('#account-details').append("<li>"+emailVerified+"</li>");
           $('#account-details').append("<li>"+phoneNumber+"</li>");
@@ -53,6 +54,11 @@
           $('#sign-in-status').append('Signed out');
           $('#sign-in').append('<a href="authentication.html">Sign in</a>');
         }
+    }
+
+    function handleLogout() {
+        firebase.auth().signOut();
+        location.hef="authentication.html";   
     }
   </script>
 
