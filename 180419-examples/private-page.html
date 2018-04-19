@@ -12,7 +12,7 @@
         <h1>Welcome to My Awesome App</h1>
         <div id="sign-in-status"></div>
         <div id="sign-in"></div>
-        <div id="account-details"></div>
+        <ul id="account-details"></div>
     </body>
 
     <script>
@@ -29,10 +29,11 @@
     </script>
 
 <script type="text/javascript">
-    initApp = function() {
-      firebase.auth().onAuthStateChanged(function(user) {
+
+    firebase.auth().onAuthStateChanged(handleUser);
+
+    function handleUser(user) {
         if (user) {
-          // User is signed in.
           var displayName = user.displayName;
           var email = user.email;
           var emailVerified = user.emailVerified;
@@ -40,34 +41,21 @@
           var uid = user.uid;
           var phoneNumber = user.phoneNumber;
           var providerData = user.providerData;
-          user.getIdToken().then(function(accessToken) {
-            document.getElementById('sign-in-status').textContent = 'Signed in';
-            document.getElementById('sign-in').textContent = 'Sign out';
-            document.getElementById('account-details').textContent = JSON.stringify({
-              displayName: displayName,
-              email: email,
-              emailVerified: emailVerified,
-              phoneNumber: phoneNumber,
-              photoURL: photoURL,
-              uid: uid,
-              accessToken: accessToken,
-              providerData: providerData
-            }, null, '  ');
-          });
-        } else {
-          // User is signed out.
-          document.getElementById('sign-in-status').textContent = 'Signed out';
-          document.getElementById('sign-in').textContent = 'Sign in';
-          document.getElementById('account-details').textContent = 'null';
-        }
-      }, function(error) {
-        console.log(error);
-      });
-    };
 
-    window.addEventListener('load', function() {
-      initApp()
-    });
+          $('#sign-in-status').append('Signed in');
+          $('#sign-in').append('<a href="logout.html">Signout</a>');
+          $('#account-details').append("<li>"+email+"</li>");
+          $('#account-details').append("<li>"+emailVerified+"</li>");
+          $('#account-details').append("<li>"+phoneNumber+"</li>");
+          $('#account-details').append("<li>"+photoURL+"</li>");
+          $('#account-details').append("<li>"+uid+"</li>");
+          $('#account-details').append("<li>"+providerData+"</li>");
+          $('#account-details').append("<li>"+displayName+"</li>");
+        } else {
+          $('#sign-in-status').append('Signed out');
+          $('#sign-in').append('<a href="authentication.html">Sign in</a>');
+        }
+    }
   </script>
 
 </html>
