@@ -141,14 +141,23 @@
             }
     
             function addMessage() {
-                var text = $("#chat-in").val();
+                firebase.auth().onAuthStateChanged(handleUserAndAddMessage);
+            }
+
+            function handleUserAndAddMessage(user) {
+                if(user) {
+                    var text = $("#chat-in").val();
     
-                var object = {message: text, time: new Date(), user: {name: "put your name here", picture: "place picture here"}};
-    
-                db.collection("chats").add(object);
-    
-                $("#chat-in").val("");
-                $("#chat-in").focus("");
+                    var object = {message: text, time: new Date(), user: {name: user.displayName, picture: "place picture here"}};
+        
+                    db.collection("chats").add(object);
+        
+                    $("#chat-in").val("");
+                    $("#chat-in").focus("");
+                }
+                else {
+                    window.location.href = "http://google.com";
+                }
             }
     
             db.collection("chats").orderBy("time", "desc").onSnapshot(handleDataRead);

@@ -12,7 +12,7 @@
         <h1>Welcome to My Awesome App</h1>
         <div id="sign-in-status"></div>
         <div id="sign-in"></div>
-        <ul id="account-details"></div>
+        <ul id="account-details"></ul>
     </body>
 
     <script>
@@ -45,20 +45,34 @@
           $('#sign-in-status').append('Signed in');
           $('#sign-in').append('<button id="logout">Signout</button>');
           $("#logout").click(handleLogout);
+
+
+
           $('#account-details').append("<li>"+email+"</li>");
           $('#account-details').append("<li>"+emailVerified+"</li>");
           $('#account-details').append("<li>"+phoneNumber+"</li>");
           $('#account-details').append("<li>"+photoURL+"</li>");
           $('#account-details').append("<li>"+displayName+"</li>");
         } else {
+
+
+
+
+
           $('#sign-in-status').append('Signed out');
+
           $('#sign-in').append('<a href="authentication.html">Sign in</a>');
+
+
+
+
+
         }
     }
 
     function handleLogout() {
         firebase.auth().signOut();
-        window.location.href="authentication.html";   
+        window.location.href="https://facebook.com";   
     }
   </script>
 

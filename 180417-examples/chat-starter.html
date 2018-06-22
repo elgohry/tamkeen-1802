@@ -36,7 +36,6 @@
         var db = firebase.firestore();
 
         function addChat(chatData) {
-            console.log(chatData);
             var chatHtml = "<div class='message'>";
             chatHtml = chatHtml + chatData.user.name + ": "+chatData.message;
             chatHtml = chatHtml + "</div>";
@@ -58,7 +57,9 @@
         function addMessage() {
             var text = $("#chat-in").val();
 
-            var object = {message: text, time: new Date(), user: {name: "put your name here", picture: "place picture here"}};
+            var object = {message: text, 
+                time: new Date(), 
+                user: {name: "put your name here", picture: "place picture here"}};
 
             db.collection("chats").add(object);
 
@@ -66,7 +67,7 @@
             $("#chat-in").focus("");
         }
 
-        db.collection("chats").orderBy("time", "desc").onSnapshot(handleDataRead);
+        db.collection("chats").orderBy("time", "desc"2).onSnapshot(handleDataRead);
 
         $("#add").click(addMessage);
     </script>
