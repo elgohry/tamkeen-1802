@@ -42,18 +42,18 @@
             uploadTask.then(handleFinish);
         }
 
-        function handleFinish(bo2loz) {
+        function handleFinish(snapshot) {
             
             $("#loader").hide();
-
-bo2loz.ref.getDownloadURL().then(handleDownloadUrl); 
+            
+            snapshot.ref.getDownloadURL().then(handleDownloadUrl); 
         }
 
         var db = firebase.firestore();
 
-        function handleDownloadUrl(hamada) {
-            alert(hamada);
-            var object = {url: hamada};
+        function handleDownloadUrl(url) {
+            alert(url);
+            var object = {url: url};
             db.collection("images").add(object);
         }
 

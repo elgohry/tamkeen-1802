@@ -76,7 +76,6 @@ function addImageToDB(downloadURL) {
 
     db.collection("todo-with-images").add({task: "new task with images", image: downloadURL})
 
-    console.log('File available at', downloadURL);
     alert("done with upload")
 }
     </script>
