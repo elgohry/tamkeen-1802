@@ -1,0 +1,187 @@
+<html>
+    <head>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script
+    src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+    <script src="jquery-3.3.1.js" type="text/javascript">
+	
+    </script>
+	<script type="text/javascript" src="cordova.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Roboto"
+    rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">  
+    
+    
+    <style>
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+            body {
+                font-family: 'Cairo', 'Roboto';
+                
+            }
+
+            #container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .contact {
+                width: 100%;
+                border: 1px solid black;
+                padding: 20px;
+                margin: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                flex-direction: column;
+                border-radius: 10px;
+                color: black;
+                text-decoration: unset;
+                min-height: 366px;
+                box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+
+            }
+
+            .icon img {
+                width: 100px;
+            }
+
+            .name {
+                font-size: 60px;
+            }
+
+            .number {
+                font-size: 60px;
+            }
+			
+			*, *:before, *:after {
+			  margin: 0;
+			  padding: 0;
+			  box-sizing: border-box;
+			}
+
+			html, body {
+			  height: 100vh;
+			}
+			
+			body {
+			  color: #333;
+			  overflow-x: hidden;
+			}
+			
+			.wrapper {
+			  display: flex;
+			  min-height: 100%;
+			}
+
+			.sidebar {
+			  position: absolute;
+			  width: 220px;
+			}
+
+			.content {
+			  flex: 1;
+			  padding: 30px;
+			  box-shadow: 0 0 5px rgba(0,0,0,1);
+			  transform: translate3d(0,0,0);
+			  transition: transform .3s;
+			}
+
+			.content.isOpen {
+			  transform: translate3d(220px,0,0);
+			}
+
+			.button {
+			  cursor: pointer;
+			}
+
+			.button:before {
+			  content: '\f0c9';
+			  font: 42px fontawesome;
+			}
+
+			/* Demo Navigation */
+
+			.title {
+			  font-size: 16px;
+			  line-height: 50px;
+			  text-align: center;
+			  text-transform: uppercase;
+			  letter-spacing: 7px;
+			  color: #eee;
+			  border-bottom: 1px solid #222;
+			  background: #2a2a2a;
+			}
+
+			.nav li a {
+			  position: relative;
+			  display: block;
+			  padding: 20px 0 20px 50px;
+			  font-size: 12px;
+			  color: #eee;
+			  border-bottom: 1px solid #222;
+			}
+
+			.nav li a:before {
+			  font: 14px;
+			  position: absolute;
+			  top: 19px;
+			  left: 20px;
+			}
+			
+			.nav li {
+				background: #333;
+				color: #eee;
+			}
+			
+			.isClosed {
+				display: none;
+			}
+			
+			.sidebar a {
+				color: #eee !important;
+				text-decoration: unset !important; 
+			}
+			
+			.content {
+				background-color: white;
+			}
+			.body {
+				background-color: #333;
+			}
+			
+        </style>
+
+
+    </head>
+    <body>
+	 <div class='wrapper'>
+		 <div class='sidebar'>
+			<div class='title'>
+			  <a href="index.html">Caller</a>
+			</div>
+			<ul class='nav'>
+				<li><a href='about.html'>about</a></li>
+			</ul>
+		 </div>
+	 
+		 <div class='content isOpen'>
+			<a class='button'>
+				
+			</a>
+			 <div id="container">
+			  about the app ...
+			 </div>
+		 </div>
+	 </div>
+    </body>
+    <script>
+	
+  $('.button').click(function() {
+    $('.content').toggleClass('isOpen');
+	$('.sidebar').toggleClass('isClosed');
+  });
+	
+    </script>
+    </html>

@@ -1,0 +1,33 @@
+<html>
+        <head>
+        <script src="jquery-3.3.1.js"></script>
+        <style>
+            
+        </style>
+        </head>
+        <body>
+
+            <input type="text"></input>
+            <button id="zorar">+</button>
+
+            <ul>
+                <li>asdad</li>
+                <li>as</li>
+                <li>asd</li>
+            </ul>
+        </body>
+        <script>
+            function bo2loz() {
+                var x = $("input");
+                var y = x.val();
+                var z = "<li>"+y+"</li>";
+
+                $("ul").append(z);
+
+                x.val("");
+                x.focus();
+            }
+
+            $("#zorar").click(bo2loz);
+        </script>
+       </html>

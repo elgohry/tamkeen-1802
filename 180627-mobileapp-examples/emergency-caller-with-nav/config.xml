@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.helloworld" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>emergency-caller-nav</name>
+    <description>
+        Emergency Caller - with nav
+    </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+	<icon src="emergency-icon.png" />
+	
+	<plugin name="cordova-plugin-whitelist" version="1" />
+	<allow-navigation href="*" />
+	<allow-intent href="*" />
+</widget>
