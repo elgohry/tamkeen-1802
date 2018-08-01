@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script
+        src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+
+    <script src="jquery-3.3.1.js"></script>
+
+  </head>
+  <style>
+    #menu{
+      width: 20%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: solid 5px red;
+      
+        
+    }
+    #tapsContaniar{
+         border: solid 5px orange;
+         height: 100%;
+       width: 80%;
+      display: flex;
+      flex-direction: column;
+      direction: rtl;
+      
+    }
+    #container{
+      display: flex;
+   
+    }
+    .taps{
+      width: 99%;
+      height: 20%;
+     
+      margin-top: 5px;
+      border: solid #000 .5px;
+     -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	 box-shadow: 0 8px 6px -6px black;
+    }
+    .nav{
+      border: solid 2px yellow;
+      background-color: black;
+      display: flex;
+      justify-content: flex-start;
+      height: 10%;
+    }
+    #TCFade{
+      border: solid 5px orange;
+         height: 100%;
+       width: 100%;
+      display: flex;
+      flex-direction: column;
+      direction: rtl;
+      
+    }
+    
+    #popup {
+          position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    #popup-content {
+      width: 40%;
+      height: 40%;
+      background: gray;
+   -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	 box-shadow: 0 8px 6px -6px black;
+    }
+    #exitButton{
+      width: 60px;
+      height: 40px;
+      margin-left: 15px;
+        
+    }
+    #toglle{
+      width: 80px;
+    }
+  </style>
+  <body>
+  
+ <div id="popup">
+    
+    <div id="popup-content">
+      <button id="exitButton" >الرجوع</button>
+    </div>
+  </div>
+  
+  <nav class="nav" > <button id="toglle" >Menu</button></nav>
+   <div id="container">
+   <div id="menu">
+        
+    </div>
+    <div id="tapsContaniar">
+      <div class="taps" >
+        <button id="details" >تفاصيل</button>
+      </div>
+      <div class="taps" ></div>
+    </div>
+    
+    </div>
+  </body>
+  <script>
+   var menu =  $("#menu");  
+   var popup = $("#popup");
+   var popupContent = $("#popup-content");
+      menu.hide();
+      popup.hide();
+    //  popupContent.hide();
+    function menuFade (){
+   var menu =  $("#menu");
+      menu.toggle();
+      var TCFade = "TCFade";
+      
+      $("#tapsContaniar").attr('id', TCFade);
+    }
+  $("#toglle").click(menuFade);
+    function popUpHide (){
+   var popup = $("#popup");
+   var popupContent = $("#popup-content");
+      popup.show();
+      popupContent.show;
+    }
+    $("#details").click(popUpHide);
+    function exit (){
+      popup.hide();
+    }
+    $("#exitButton").click(exit);
+  </script>
+</html>
